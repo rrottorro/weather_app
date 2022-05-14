@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding-top: 30px;
+	text-align: center;
+	height: 100%;
+}
+
+.whole {
+	position: fixed; /*固定配置*/
+	top: 0;
+	left: 0; /*左上に固定*/
+	width: 100%;
+	height: 100%; /*画面全体を覆う*/
+	background: linear-gradient(to top, #fbc8d4, #9795f0);
+	width: 100%;
+}
+
+h1 {
+	color: #E4E5F1;
+	padding: 50px;
+	font-size: 2em;
+	font-family: 'Lexend Deca', sans-serif;
+}
+
+.basic_info {
+	max-width: 400px;
+	margin: 20px auto 0px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.icon img {
+	width: 80px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.tem {
+	padding-left: 20px;
+	padding-right: 20px;
+	top: 0; bottom : 0;
+	color: #576099;
+	font-size: 4em;
+	font-family: 'Lexend Deca', sans-serif;
+	color: #576099;
+	bottom: 0;
+}
+
+.img img {
+	width: 300px;
+	padding: 20px;
+}
+
+/* ボタン */
+button {
+	padding: 20px;
+	/* 枠線消す */
+	border: none;
+	background: transparent;
+	/* ボタンデザイン */
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 10px 25px;
+	width: 300px;
+	/* 文字色 */
+	color: #576099;
+	transition: 0.3s ease-in-out;
+	font-weight: 600;
+}
+
+button:before {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: rgba(0, 0, 0, .1);
+	transform: translateX(-50%);
+}
+
+button:after {
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #000;
+	transform: scale(0, 1);
+	transform-origin: left top;
+	transition: transform .3s;
+	background: #6F5194;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+button:hover:after {
+	transform: scale(1, 1);
+}

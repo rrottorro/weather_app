@@ -1,30 +1,72 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
+
 <head>
+
 <title>Hello</title>
 <meta charset="utf-8" />
-	<!-- <link th:href="@{/js/common.css}" rel="stylesheet" type="text/css"> -->
- 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- 	<script type="text/javascript" th:src="@{/js/jquery.japan-map.js}"></script>
- 	
+<link th:href="@{/css/base.css}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap"
+	rel="stylesheet">
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/jquery.japan-map.js}"></script>
+
+</head>
+
 <body>
-	<h1>第一章 Spring Boot＋Thymeleaf で”Hello World”を作成する</h1>
-	<h2>
-		<span th:text="${message}"></span>
-	</h2>
+	<div class="backimage">
 
-	<div id="map-container">
-		<form th:action="@{/weather_forecast}" method="post">
-		</form>
+		<h1>
+			How is the <br> weather <br> there now?
+		</h1>
+
+		<div class="place">
+		
+			<form id="SAPPORO_form" method="post"
+				th:action="@{/weather_forecast}">
+				<input type="hidden" name="latitude" value="43"> <input
+					type="hidden" name="longitude" value="141"> <input
+					type="hidden" name="place" value="SAPPORO">
+				<button type="submit">SAPPORO</button>
+			</form>
+
+			<form method="post" th:action="@{/weather_forecast}">
+				<input type="hidden" name="latitude" value="36"> <input
+					type="hidden" name="longitude" value="140"> <input
+					type="hidden" name="place" value="TOKYO">
+				<button type="submit">TOKYO</button>
+			</form>
+
+			<form id="form" method="post" th:action="@{/weather_forecast}">
+				<input type="hidden" name="latitude" value="35"> <input
+					type="hidden" name="longitude" value="136"> <input
+					type="hidden" name="place" value="NAGOYA">
+				<button type="submit">NAGOYA</button>
+			</form>
+			
+			<form id="form" method="post" th:action="@{/weather_forecast}">
+				<input type="hidden" name="latitude" value="34"> <input
+					type="hidden" name="longitude" value="135"> <input
+					type="hidden" name="place" value="OSAKA">
+				<button type="submit">OSAKA</button>
+			</form>
+			
+			<form id="form" method="post" th:action="@{/weather_forecast}">
+				<input type="hidden" name="latitude" value="33"> <input
+					type="hidden" name="longitude" value="130"> <input
+					type="hidden" name="place" value="OSAKA">
+				<button type="submit">FUKUOKA</button>
+			</form>
+			
+		</div>
 	</div>
-	
-	<form th:action="@{/weather_forecast}" method="post">
-		<button type="submit">a</button>
-	</form>
-
 	<script type="text/javascript" th:src="@{/js/base.js}"></script>
-
 
 </body>
 </html>

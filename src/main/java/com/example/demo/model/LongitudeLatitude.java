@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 public class LongitudeLatitude {
 	
@@ -8,26 +9,16 @@ public class LongitudeLatitude {
 		
 	}
 	
-	@JsonProperty("latitude")
+    @Getter
+    @Setter
 	private Float latitude;
 	
-	@JsonProperty("longitude")
+    @Getter
+    @Setter
 	private Float longitude;
-	
-	public Float getLatitude() {
-		return this.latitude;
-	}
-	
-	public Float getLongitude() {
-		return this.longitude;
-	}
-	
-	public void setLatitude(Float latitude){
-		this.latitude = latitude;
-	}
-	
-	public void setLongitude(Float longitude){
-		this.longitude = longitude;
-	}
+    
+    @Getter
+    @Setter
+	private String place;
 	
 }

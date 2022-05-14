@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
- 	<head>
-    	<title>Hello</title>
-    	<meta charset="utf-8" />
-  	</head>
-  	<body>
-    	<h1>第一章</h1>
-	<form method="post" th:action="@{/weather_forecast}">
-		<button>a</button>
-	</form>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Hello</title>
+<meta charset="utf-8" />
+<link th:href="@{/css/base.css}" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap"
+	rel="stylesheet">
+<link href=”https://fonts.googleapis.com/icon?family=Material+Icons”
+	rel=”stylesheet”>
+
+<link th:href="@{/css/detail.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="whole">
+
+		<h1 th:text="${place}"></h1>
+
+		<div class="basic_info">
+
+			<div th:switch="${icon}" class="icon">
+				<img th:case="1" th:src="@{img/weather_icon/sunny.png}"> <img
+					th:case="2" th:src="@{img/weather_icon/partly_cloudy.png}"> <img
+					th:case="3" th:src="@{img/weather_icon/cloudy.png}"> <img
+					th:case="4" th:src="@{img/weather_icon/rainy.png}"> <img
+					th:case="5" th:src="@{img/weather_icon/niwaka_rain.png}"> <img
+					th:case="6" th:src="@{img/weather_icon/cloudy_snowing.png}">
+				<img th:case="7" th:src="@{img/weather_icon/thunderstorm.png}">
+			</div>
+
+			<div th:text="${temperature}" class="tem">℃</div>
+			
+		</div>
+
+		<div th:switch="${img}" class="img">
+			<img th:case="1" th:src="@{img/kirby/kirby-jet.png}"> <img
+				th:case="2" th:src="@{img/kirby/kirby-wing.png}"> <img
+				th:case="3" th:src="@{img/kirby/kirby-mirror.png}"> <img
+				th:case="4" th:src="@{img/kirby/kirby-parasol.png}"> <img
+				th:case="5" th:src="@{img/kirby/kirby-ice.png}"> <img
+				th:case="6" th:src="@{img/kirby/kirby-bubble.png}"> <img
+				th:case="7" th:src="@{img/kirby/kirby-plasma.png}"> <img
+				th:case="8" th:src="@{img/kirby/kirby-fire.png}"> <img
+				th:case="9" th:src="@{img/kirby/kirby-freeze.png}"> <img
+				th:case="10" th:src="@{img/kirby/kirby-tornado.png}">
+		</div>
+
+		<form method="GET" th:action="@{/}">
+			<button>TOP</button>
+		</form>
+
+	</div>
 </body>
 </html>
