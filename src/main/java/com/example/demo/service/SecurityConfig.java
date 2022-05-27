@@ -12,10 +12,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		// ログイン不要画面の設定
-		http
-			.authorizeRequests()
-				.antMatchers("/").permitAll()
-				.anyRequest().authenticated();
+		  http.authorizeRequests().antMatchers("/").permitAll();
 	}
 }
